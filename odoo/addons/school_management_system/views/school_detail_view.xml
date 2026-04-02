@@ -1,0 +1,70 @@
+<odoo>
+    <!--    Form-->
+     <record id="school_detail_view_form_id" model="ir.ui.view">
+            <field name="name">School</field>
+            <field name="model">school.school</field>
+            <field name="arch" type="xml">
+                <form string="School Detail View">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="address"/>
+                            <field name="gender"/>
+                            <field name="expiration_date"/>
+                            <field name="partner_id"/>
+                            <field name="class_data"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    <!--    List-->
+    <record id="school_detail_view_list_id" model="ir.ui.view">
+            <field name="name">School</field>
+            <field name="model">school.school</field>
+            <field name="arch" type="xml">
+                <list string="School Detail View">
+                            <field name="name"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="address"/>
+                            <field name="gender"/>
+                </list>
+            </field>
+        </record>
+
+    <!--     Action-->
+    <record id="school_detail_view_action" model="ir.actions.act_window">
+            <field name="name">School Detail Action</field>
+            <field name="res_model">school.school</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                This is School detail form
+              </p>
+            </field>
+        </record>
+
+    <!--    MenuItem-->
+    <menuitem
+        id="school_menu_id"
+        name="School Management"
+        sequence="25"/>
+
+    <menuitem
+        id="school_sub_id"
+        name="Student"
+        parent="school_menu_id"
+        sequence="25"/>
+
+    <menuitem
+        id="school_main_id"
+        name="Class"
+        action ="school_detail_view_action"
+        parent="school_menu_id"
+        sequence="25"/>
+
+</odoo>

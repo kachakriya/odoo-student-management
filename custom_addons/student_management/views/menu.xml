@@ -1,0 +1,19 @@
+<odoo>
+    <menuitem id="menu_student_main"
+             name="Student Management"/>
+
+    <menuitem id="menu_student"
+              name="Students"
+              parent="menu_student_main"
+              action="action_student"/>
+
+    <menuitem id="menu_course"
+              name="Courses"
+              parent="menu_student_main"
+              action="action_course"/>
+
+    <menuitem id="menu_subject"
+              name="Subjects"
+              parent="menu_student_main"
+              action="action_subject"/>
+</odoo>
